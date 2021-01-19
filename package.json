@@ -1,0 +1,25 @@
+{
+  "name": "maratonad",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ecthon",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecthon/dev-finance.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "front-end"
+  ],
+  "bugs": {
+    "url": "https://github.com/ecthon/dev-finance/issues"
+  },
+  "homepage": "https://github.com/ecthon/dev-finance#readme",
+  "description": ""
+}
