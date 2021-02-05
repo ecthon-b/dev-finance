@@ -47,6 +47,8 @@ const Transaction = {
     all: transactions,
     add(transaction) {
         Transaction.all.push(transaction)
+
+        App.reload()
     },
 
     // somar as entradas
@@ -113,6 +115,10 @@ const DOM = {
         document
         .getElementById('totalDisplay')
         .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    clearTransactions() {
+        DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -131,8 +137,25 @@ const Utils = {
     }
 }
 
-transactions.forEach(function(transaction) {
-    DOM.addTransaction(transaction)
-})
+const App = {
+    init() {
+        Transaction.all.forEach(transaction => {
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()  
+    },
+    reload() {
+        DOM.clearTransactions()
+        App.init()
+    },
+}
 
-DOM.updateBalance()
+App.init()
+
+Transaction.add({
+    id: 39,
+    description: 'Alo',
+    amount: 200,
+    date: '23/02/2021'
+})
